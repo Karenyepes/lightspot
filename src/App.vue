@@ -1,56 +1,70 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <router-view/>
-    </v-main>
+    <router-view />
+    <Notification />
+    <Dialog />
   </v-app>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
+<script>
+import Vue from "vue";
+import Notification from "@/components/Notification.vue";
+import Dialog from "@/components/Dialog.vue";
 
 export default Vue.extend({
-  name: 'App',
-
-  data: () => ({
-    //
-  }),
+  name: "App",
+  components: {
+    Notification,
+    Dialog,
+  },
 });
 </script>
+
+<style lang="scss">
+:root {
+  --primary: #0d3882;
+  --primary-alt: #1559cf;
+  --secondary: #00cfc5;
+  --secondary-alt: #00dbd0;
+  --grey: #8297b5;
+  --dark: #393939;
+  --dark-alt: #4f4f4f;
+  --light: #fff;
+  --light-alt: #f6f6f6;
+  --sidebar-width: 250px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira sans", sans-serif;
+}
+
+body {
+  background-color: var(--light-alt) !important;
+  min-height: 100vh;
+  width: 100%;
+}
+
+i {
+  cursor: pointer;
+}
+
+a {
+  color: var(--primary) !important;
+}
+
+.v-application {
+  background-color: var(--light-alt) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary) !important;
+  color: var(--light) !important;
+}
+
+.btn-secondary {
+  background-color: var(--secondary) !important;
+}
+</style>
