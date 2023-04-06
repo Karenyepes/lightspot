@@ -10,10 +10,10 @@ export const authenticateUser = async (user: Auth): Promise<Token> => {
     return data;
   } catch (err: unknown) {
     if (err instanceof AxiosError) {
-      const { detail } = err.response?.data;
-      throw new Error(detail);
+      const data = err.response?.data;
+      if(data?.detail) throw new Error(data.detail)
     }
 
-    throw new Error("Failed to authenticate user");
+    throw new Error("Error al autenticar usuario");
   }
 };
