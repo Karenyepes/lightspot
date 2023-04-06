@@ -1,4 +1,7 @@
-# lightspot
+# Lightspot
+
+## Settings
+Copy and paste `.env.example`, rename the copy as `.env`, then set all the environment variables.
 
 ## Project setup
 ```
