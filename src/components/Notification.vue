@@ -18,11 +18,10 @@
           v-bind="attrs"
           @click="removeNotification(notification)"
         >
-          Close
+          Cerrar
         </v-btn>
       </template>
     </v-snackbar>
-    
   </div>
 </template>
 
@@ -34,11 +33,11 @@ export default Vue.extend({
   computed: {
     ...mapGetters("notifier", ["notifications"]),
     isMobile() {
-      return this.$vuetify.breakpoint.mobile
-    }
+      return this.$vuetify.breakpoint.mobile;
+    },
   },
   methods: {
     ...mapMutations("notifier", ["removeNotification"]),
-  }
+  },
 });
 </script>

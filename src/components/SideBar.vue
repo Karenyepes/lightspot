@@ -53,7 +53,6 @@ export default Vue.extend({
           scope: "upload_flashes_data",
         },
         { title: "Usuarios", icon: "mdi-account-plus", to: "/user" },
-        
       ],
     };
   },
@@ -70,6 +69,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+@import "src/main.scss";
+
 aside {
   display: flex;
   flex-direction: column;
@@ -210,7 +211,7 @@ aside {
     }
   }
 
-  @media (max-width: 1024px) {
+  @include up-to-tablet-landscape {
     position: fixed;
     z-index: 99;
   }
